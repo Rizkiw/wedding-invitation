@@ -18,9 +18,7 @@ function HelloSection({ isInvitation }) {
               <h2 className="main-font">Assalamualaikum Wr. Wb</h2>
               <h3 className="sub-title hs">{finalSubtitle}</h3>
               <p className="info">
-                Dengan memohon Rahmat dan Ridho Illahi, teriring niat menjalankan Sunnah Rasulullah ﷺ untuk membentuk
-                rumah tangga yang Sakinah, Mawaddah wa Rahmah, kami mohon do'a agar senantiasa diberikan kelancaran dan
-                keberkahan.
+                Dengan penuh sukacita dan ucapan syukur kepada Tuhan, kami mohon do'a agar senantiasa diberikan kelancaran dan keberkahan. - Rizki & Linda
               </p>
             </div>
           </div>
