@@ -1,5 +1,5 @@
 import React, { Fragment, useState } from 'react';
-import IconMusic from '@assets/images/music-icon.png';
+import IconMusic from '@assets/images/music-start-icon.gif';
 import IconMusicStop from '@assets/images/music-stop-icon.png';
 import MusicBacksound from '@assets/music/lagu-pernikahan.mp3';
 
