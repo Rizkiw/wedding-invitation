@@ -1,7 +1,7 @@
 import React from 'react';
 import { string } from 'prop-types';
 
-function WeddingInfoBox({ title, date, time, description }) {
+function WeddingInfoBox({ title, date, time, description, locationUrl }) {
   return (
     <div className="col-md-6 col-sm-6 text-center">
       <div className="event-wrap">
@@ -17,7 +17,9 @@ function WeddingInfoBox({ title, date, time, description }) {
         {description && (
           <div className="event-col">
             <i className="icon-location-pin"></i>
-            <span dangerouslySetInnerHTML={{ __html: description }} />
+            <a href={locationUrl} target="_blank" rel="noopener noreferrer">
+              <span dangerouslySetInnerHTML={{ __html: description }} />
+            </a>
           </div>
         )}
       </div>
