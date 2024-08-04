@@ -12,8 +12,9 @@ function GenerateLink() {
   const [isInvitation, setIsInvitation] = useState(false);
 
   const { data, loading } = useGuestData();
+  const currentUrl = window.location.href.split('/').slice(0, 3).join('/');
 
-  const URL = `https://thekusuma.com?to=${encodeURIComponent(name)}`;
+  const URL = `${currentUrl}?to=${encodeURIComponent(name)}`;
 
   const handleChange = (e) => {
     setType(parseInt(e.target.value, 10));
@@ -113,7 +114,7 @@ function GenerateLink() {
               <tbody>
                 {data.map((d, index) => {
                   const offlineInvitation = isInvitation ? `&type=invitation&code=${d.code}` : '';
-                  const mapURL = `https://thekusuma.com?to=${encodeURIComponent(d.name)}${offlineInvitation}`;
+                  const mapURL = `${currentUrl}?to=${encodeURIComponent(d.name)}${offlineInvitation}`;
                   return (
                     <tr>
                       <td>{index + 1}</td>
