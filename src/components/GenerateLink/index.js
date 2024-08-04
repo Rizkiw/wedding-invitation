@@ -1,18 +1,26 @@
-import React, { useState, Fragment } from 'react';
+import React, { useState, useEffect, Fragment } from 'react';
 import useGuestData from '@/hooks/useGuestData';
 
 const PERSONAL = 1;
 const ALL = 2;
 
 function GenerateLink() {
+
   const [type, setType] = useState(PERSONAL);
   const [name, setName] = useState();
+  const [currentUrl, setCurrentUrl] = useState('');
   const [showResult, setShowResult] = useState(false);
   const [successCopy, setSuccessCopy] = useState(false);
   const [isInvitation, setIsInvitation] = useState(false);
 
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const url = window.location.href.split('/').slice(0, 3).join('/');
+      setCurrentUrl(url);
+    }
+  }, []);
+
   const { data, loading } = useGuestData();
-  const currentUrl = window.location.href.split('/').slice(0, 3).join('/');
 
   const URL = `${currentUrl}?to=${encodeURIComponent(name)}`;
 
