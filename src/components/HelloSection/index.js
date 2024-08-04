@@ -1,13 +1,13 @@
 import React, { Fragment } from 'react';
 import { bool } from 'prop-types';
 
-import Bride from '@assets/images/p-dinda-2.jpg';
-import Groom from '@assets/images/p-indra.jpg';
+import Bride from '@assets/images/linda.jpg';
+import Groom from '@assets/images/rizki.jpg';
 
 import { styWrapper } from './styles';
 
 function HelloSection({ isInvitation }) {
-  const finalSubtitle = isInvitation ? '03 Oktober 2020, HARRIS Hotel Sentraland, Semarang' : 'Sabtu, 03 Oktober 2020';
+  const finalSubtitle = isInvitation ? '03 Oktober 2020, HARRIS Hotel Sentraland, Semarang' : 'Sabtu, 29 November 2025';
 
   return (
     <Fragment>
@@ -15,22 +15,23 @@ function HelloSection({ isInvitation }) {
         <div className="container">
           <div className="row">
             <div className="col-md-8 col-md-offset-2 text-center fh5co-heading">
-              <h2 className="main-font">Assalamualaikum Wr. Wb</h2>
+              {/* <h2 className="main-font">Assalamualaikum Wr. Wb</h2> */}
               <h3 className="sub-title hs">{finalSubtitle}</h3>
               <p className="info">
-                Dengan penuh sukacita dan ucapan syukur kepada Tuhan, kami mohon do'a agar senantiasa diberikan kelancaran dan keberkahan. - Rizki & Linda
+                "Dan mereka menjadi satu daging; sehingga mereka bukan lagi dua, melainkan satu daging. Karena itu apa yang telah dipersatukan Allah, tidak boleh diceraikan oleh manusia."
+                <br />Markus 10:8-9
               </p>
             </div>
           </div>
           <div className="couple-wrap">
             <div className="couple-half">
               <div className="groom">
-                <img src={Bride} alt="groom" className="img-responsive" loading="lazy" />
+                <img src={Groom} alt="groom" className="img-responsive" loading="lazy" />
               </div>
               <div className="desc-groom">
-                <h3 className="main-font">Dinda Saraswati, S.I.Kom.</h3>
+                <h3 className="main-font">Rizki Wibisono Kristianto</h3>
                 <p className="parent-name parent-name__top">
-                  Putri Bapak Totok Somo Dipoyono <br />& Ibu Setyo Listiani
+                  Putri Bapak Kristanto <br />& Ibu Kristina Sri Sugiarti
                 </p>
               </div>
             </div>
@@ -42,12 +43,12 @@ function HelloSection({ isInvitation }) {
             </div>
             <div className="couple-half">
               <div className="bride">
-                <img src={Groom} alt="groom" className="img-responsive" loading="lazy" />
+                <img src={Bride} alt="bride" className="img-responsive" loading="lazy" />
               </div>
               <div className="desc-bride">
-                <h3 className="main-font">Indra Kusuma, S.Kom.</h3>
+                <h3 className="main-font">Lindawati</h3>
                 <p className="parent-name">
-                  Putra Bapak Bunari <br />& Ibu Suratun
+                  Putra Harianto Kusuma <br />& Alm. Ibu ??
                 </p>
               </div>
             </div>
