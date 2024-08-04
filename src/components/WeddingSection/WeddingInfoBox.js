@@ -3,7 +3,7 @@ import { string } from 'prop-types';
 
 function WeddingInfoBox({ title, date, time, description, locationUrl }) {
   return (
-    <div className="col-md-6 col-sm-6 text-center">
+    <div className="col-md-6 col-sm-6">
       <div className="event-wrap">
         <h3>{title}</h3>
         <div className="event-col">
@@ -17,9 +17,11 @@ function WeddingInfoBox({ title, date, time, description, locationUrl }) {
         {description && (
           <div className="event-col">
             <i className="icon-location-pin"></i>
-            <a href={locationUrl} target="_blank" rel="noopener noreferrer">
-              <span dangerouslySetInnerHTML={{ __html: description }} />
-            </a>
+            <span>
+              <a href={locationUrl} target="_blank" rel="noopener noreferrer">
+                <span dangerouslySetInnerHTML={{ __html: description }} />
+              </a>
+            </span>
           </div>
         )}
       </div>
