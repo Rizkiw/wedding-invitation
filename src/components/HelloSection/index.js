@@ -31,7 +31,7 @@ function HelloSection() {
               <div className="desc-groom">
                 <h3 className="main-font">Rizki Wibisono Kristianto</h3>
                 <p className="parent-name parent-name__top">
-                  Putra Bapak Kristanto <br />& Ibu Kristina Sri Sugiarti
+                  Putra Pertama Bapak Kristanto <br />& Ibu Kristina Sri Sugiarti
                 </p>
               </div>
             </div>
@@ -48,7 +48,7 @@ function HelloSection() {
               <div className="desc-bride">
                 <h3 className="main-font">Lindawati</h3>
                 <p className="parent-name">
-                  Putri Harianto Kusuma <br />& Alm. Ibu Neni Supiani
+                  Putri Pertama Bapak Harianto Kusuma <br />& Alm. Ibu Neni Supiani
                 </p>
               </div>
             </div>
