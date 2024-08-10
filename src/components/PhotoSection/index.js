@@ -32,7 +32,13 @@ function PhotoSection() {
           </div> */}
           <div className="row">
             <div className="col-md-10 col-md-offset-1">
-              <ImageGallery items={photos} showBullets={false} />;
+              <ImageGallery
+                items={photos}
+                showBullets={false}
+                lazyLoad={true}
+                autoPlay={true}  // Enable autoplay
+                slideInterval={3000}  // Set slide interval to 3000ms (3 seconds)
+              />;
             </div>
           </div>
         </div>
