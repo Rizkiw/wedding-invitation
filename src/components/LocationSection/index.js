@@ -1,8 +1,19 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 import { GOOGLE_MAPS_LINK } from '@/constants';
 import { styWrapper } from './styles';
 
 function LocationSection() {
+
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
+  }, []);
+
   return (
     <Fragment>
       <div id="fh5co-couple-story" className="fh5co-section-gray" css={styWrapper}>
@@ -27,7 +38,7 @@ function LocationSection() {
             </div>
           </div>
           <div className="row">
-            <div className="col-md-10 col-md-offset-1">
+            <div className="col-md-10 col-md-offset-1" data-aos="zoom-in">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.621861305265!2d106.63074327591373!3d-6.181338893806146!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f8d594f72dc3%3A0xae92741b5907139f!2sHappy%20Wedding%20Hall!5e0!3m2!1sid!2sid!4v1722790547942!5m2!1sid!2sid"
                 width="100%"

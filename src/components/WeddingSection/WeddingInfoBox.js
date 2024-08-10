@@ -5,7 +5,9 @@ function WeddingInfoBox({ title, date, time, description, locationUrl }) {
   return (
     <div className="col-md-6 col-sm-6">
       <div className="event-wrap">
-        <h3>{title}</h3>
+        <div className="text-center">
+          <h3>{title}</h3>
+        </div>
         <div className="event-col">
           <i className="icon-clock"></i>
           <span>{time}</span>
