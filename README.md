@@ -9,7 +9,7 @@ Features:
  - Pre-wedding Video 
  - And more..
 - also, this web-app has QR Guest Generator
-- and Guest Tikcet Viewer
+- and Guest Ticket Viewer
 
 Tech Stack:
 - GatsbyJs
