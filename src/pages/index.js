@@ -34,7 +34,6 @@ function Home({ location }) {
 
   const renderDetailContent = () => {
     if (!showDetailContent) return null;
-
     return (
       <Fragment>
         <HelloSection />
