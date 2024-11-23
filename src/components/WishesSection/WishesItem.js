@@ -2,20 +2,20 @@ import React from 'react';
 import { string, bool } from 'prop-types';
 import { styWrapperItem, styWithAnimation } from './styles';
 
-function WishesItem({ image, name, infoName, description, isActive }) {
+function WishesItem({ image, name, infoName, message, isActive }) {
   if (!isActive) return null;
 
   const renderItem = () => {
     return (
       <div className="item" css={styWrapperItem}>
         <div className={`testimony-slide text-center ${isActive ? 'active' : 'hide'}`}>
-          <figure>
+          {/* <figure>
             <img src={image} alt="user" loading="lazy" />
-          </figure>
+          </figure> */}
           <h4>{name}</h4>
-          <span className="infoName">{infoName}</span>
+          {/* <span className="infoName">{infoName}</span> */}
           <blockquote>
-            <p className="description">{description}</p>
+            <p className="description">{message}</p>
           </blockquote>
         </div>
       </div>

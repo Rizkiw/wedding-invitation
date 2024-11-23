@@ -22,11 +22,11 @@ export const styWrapperItem = css`
     color: #828282;
     font-weight: bold;
     text-transform: uppercase;
-    margin: 0 0 4px 0;
+    margin: 0 0 2px 0;
   }
 
   blockquote {
-    margin-top: 16px !important;
+    margin-top: 2px !important;
   }
 
   .infoName {

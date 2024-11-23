@@ -1,15 +1,16 @@
 import React, { useState, useEffect, useCallback } from 'react';
-
+import { collection, onSnapshot } from 'firebase/firestore';
+import db from '../../firebase/firebase'; // Ensure firebase.js exports your Firestore instance
 import WishesItem from './WishesItem';
-import { wishlist } from './wishlist-data';
 import { styButtonWrapper } from './styles';
 
-const INTERVAL_SLIDE = 35000;
+const INTERVAL_SLIDE = 5000;
 
 function WishesContainer() {
   const [active, setActive] = useState(0);
+  const [greetings, setGreetings] = useState([]);
   const [pauseSlide, setPauseSlide] = useState(false);
-  const totalWishes = wishlist.length || 0;
+  const totalWishes = greetings.length || 0;
 
   const handleSetActive = (isNext = true) => {
     if (isNext) {
@@ -34,16 +35,28 @@ function WishesContainer() {
   };
 
   const handleSetNext = useCallback(() => {
-    if (active === wishlist.length - 1) {
+    if (active === greetings.length - 1) {
       setActive(0);
     } else {
       setActive(active + 1);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [active]);
 
   const renderWishlist = () => {
-    return wishlist.map((w, index) => <WishesItem key={index} {...w} isActive={index === active} />);
+    return greetings.map((w, index) => <WishesItem key={index} {...w} isActive={index === active} />);
   };
+
+  // Real-time listener for greetings collection
+  useEffect(() => {
+    const greetingsRef = collection(db, 'greetings');
+    const unsubscribe = onSnapshot(greetingsRef, (snapshot) => {
+      const data = snapshot.docs.map((doc) => doc.data());
+      setGreetings(data);
+    });
+
+    return () => unsubscribe(); // Clean up the listener on unmount
+  }, []);
 
   /** Side effect to autoscroll */
   useEffect(() => {
