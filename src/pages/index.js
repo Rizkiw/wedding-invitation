@@ -21,11 +21,11 @@ import GreetingForm from '@components/GreetingForm';
 function Home({ location }) {
   const guestName = decodeURIComponent(getQueryValue(location, 'to') || '');
   const isInvitation = getQueryValue(location, 'type') === 'invitation';
+  const isMatrimoni = getQueryValue(location, 'type') === 'holymatrimoni';
   // const firstName = guestName.replace(/ .*/, '');
   const isAnonymGuest = guestName === '' && !isInvitation;
   const codeLink = getQueryValue(location, 'code') || '';
   const finalTicketLink = `code=${codeLink}&name=${guestName}`;
-
   const [showDetailContent, setShowDetailContent] = useState(false);
 
   const handleClickDetail = () => {
@@ -37,9 +37,13 @@ function Home({ location }) {
     return (
       <Fragment>
         <HelloSection />
-        <WeddingSection />
+        <WeddingSection
+          isMatrimoni={isMatrimoni}
+        />
         {/* {isInvitation && <CovidSection />} */}
-        <LocationSection />
+        <LocationSection
+          isMatrimoni={isMatrimoni}
+        />
         {/* <StorySection /> */}
         <PhotoSection />
         <WishesSection />
@@ -58,6 +62,7 @@ function Home({ location }) {
         isInvitation={isInvitation}
         location={location}
         codeLink={finalTicketLink}
+        isMatrimoni={isMatrimoni}
         onClickDetail={handleClickDetail}
       />
       {renderDetailContent()}
