@@ -10,7 +10,7 @@ export const styMusicFloating = css`
     bottom: 24px;
     width: 50px;
     z-index: 999;
-    left: 24px;
+    right: 24px;
     animation: pulse 2s ease infinite;
     cursor: pointer;
     border-radius: 50%;
@@ -20,14 +20,14 @@ export const styMusicFloating = css`
   @media screen and (max-width: 420px) {
     .icon-music {
       width: 40px;
-      left: 20px;
+      right: 20px;
     }
   }
 
   @media screen and (max-width: 360px) {
     .icon-music {
       width: 30px;
-      left: 20px;
+      right: 20px;
     }
   }
 

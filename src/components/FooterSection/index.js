@@ -17,8 +17,8 @@ function FooterSection() {
                 </small> */}
                 <small className="block">
                   Song by{' '}
-                  <a href="https://www.youtube.com/watch?v=WNw2yH_waVc" target="_blank" rel="noreferrer">
-                    Juicy Luicy - Lagu Nikah
+                  <a href="https://www.youtube.com/watch?v=o25_Tn8BnFM" target="_blank" rel="noreferrer">
+                    Andmesh - Anugerah Terindah
                   </a>
                 </small>
                 <small className="block">
