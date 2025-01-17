@@ -36,6 +36,7 @@ function Home({ location }) {
     if (!showDetailContent) return null;
     return (
       <Fragment>
+        <FloatingMusic />
         <HelloSection />
         <WeddingSection
           isMatrimoni={isMatrimoni}
@@ -66,7 +67,6 @@ function Home({ location }) {
         onClickDetail={handleClickDetail}
       />
       {renderDetailContent()}
-      <FloatingMusic />
     </MainLayout>
   );
 }

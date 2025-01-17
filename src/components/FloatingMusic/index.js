@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react';
+import React, { Fragment, useState, useEffect } from 'react';
 import IconMusic from '@assets/images/music-start-icon.gif';
 import IconMusicStop from '@assets/images/music-stop-icon.png';
 import MusicBacksound from '@assets/music/lagu-pernikahan.mp3';
@@ -7,6 +7,11 @@ import { styMusicFloating } from './styles';
 
 function FloatingMusic() {
   const [play, setPlay] = useState(true);
+
+  useEffect(() => {
+    const myAudio = document.getElementById('myAudio');
+    myAudio.play();
+  }, []);
 
   const toggleMusic = () => {
     const myAudio = document.getElementById('myAudio');
