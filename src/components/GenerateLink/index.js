@@ -1,8 +1,6 @@
 import React, { useState, useEffect, Fragment } from 'react';
-import useGuestData from '@/hooks/useGuestData';
 
 const PERSONAL = 1;
-const ALL = 2;
 
 function GenerateLink() {
 
@@ -11,7 +9,6 @@ function GenerateLink() {
   const [currentUrl, setCurrentUrl] = useState('');
   const [showResult, setShowResult] = useState(false);
   const [successCopy, setSuccessCopy] = useState(false);
-  const [isInvitation, setIsInvitation] = useState(false);
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
@@ -20,7 +17,6 @@ function GenerateLink() {
     }
   }, []);
 
-  const { data, loading } = useGuestData();
 
   const URL = `${currentUrl}?to=${encodeURIComponent(name)}`;
 
@@ -64,87 +60,39 @@ function GenerateLink() {
         </Fragment>
       );
     }
-
-    if (type === ALL) {
-      return (
-        <Fragment>
-          <div class="checkbox">
-            <label>
-              <input type="checkbox" checked={isInvitation} onClick={() => setIsInvitation(!isInvitation)} /> Tipe
-              Invitation (Datang offline)
-            </label>
-          </div>
-          <button type="submit" class="btn btn-primary" onClick={() => setShowResult(true)}>
-            Generate Link
-          </button>
-        </Fragment>
-      );
-    }
   };
 
   const renderResult = () => {
     if (!showResult) return null;
 
     if (type === PERSONAL) {
+      const invitationText = `Dear ${name},\n\nDengan penuh sukacita, kami bermaksud mengundang Bapak/Ibu/Saudara/i untuk menghadiri acara pernikahan kami, Rizki dan Linda, yang akan dilaksanakan pada hari Sabtu, tanggal 29 November 2025.\n\nBerikut link undangan untuk informasi lebih lengkap:\n\n${URL}\n\nMerupakan suatu kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan untuk hadir dan memberikan doa restu.\nTerima kasih.`;
+
       return (
         <div className="col-md-4 col-md-offset-4">
           <div class="alert alert-success" role="alert" style={{ marginTop: '20px' }}>
             <strong>Berhasil!</strong> <br />
+            <p>
+              {invitationText.split('\n').map((line, index) => (
+                <Fragment key={index}>
+                  {line}
+                  <br />
+                </Fragment>
+              ))}
+            </p><br />
+
+            <strong>Test Link : </strong>
             <a href={URL} target="_blank" rel="noreferrer" style={{ color: 'green', textDecoration: 'underline' }}>
               {URL}
-            </a>
+            </a> <br /><br />
             <button
               type="button"
               className="btn btn-default btn-xs"
-              style={{ marginLeft: '8px' }}
-              onClick={() => handleCopy(URL)}
+              style={{ position: 'center' }}
+              onClick={() => handleCopy(invitationText)}
             >
               {successCopy ? 'Tersalin' : 'Salin'}
             </button>
-          </div>
-        </div>
-      );
-    }
-
-    if (type === ALL) {
-      return (
-        <div className="col-md-10 col-md-offset-1" style={{ marginTop: '28px' }}>
-          <div class="table-responsive">
-            <table class="table">
-              <thead>
-                <tr>
-                  <th>No</th>
-                  <th>Nama</th>
-                  <th>Keterangan</th>
-                  <th>Link</th>
-                </tr>
-              </thead>
-              <tbody>
-                {data.map((d, index) => {
-                  const offlineInvitation = isInvitation ? `&type=invitation&code=${d.code}` : '';
-                  const mapURL = `${currentUrl}?to=${encodeURIComponent(d.name)}${offlineInvitation}`;
-                  return (
-                    <tr>
-                      <td>{index + 1}</td>
-                      <td>{d.name}</td>
-                      <td>{d.desc}</td>
-                      <td>
-                        <a href={mapURL} target="_blank" rel="noreferrer" style={{ textDecoration: 'underline' }}>
-                          {mapURL}
-                        </a>
-                        <button
-                          className="btn btn-default btn-sm"
-                          style={{ fontSize: '12px', padding: '4px 8px', marginLeft: '4px' }}
-                          onClick={() => handleCopy(mapURL, true)}
-                        >
-                          copy
-                        </button>
-                      </td>
-                    </tr>
-                  );
-                })}
-              </tbody>
-            </table>
           </div>
         </div>
       );
@@ -156,25 +104,20 @@ function GenerateLink() {
       <h2 className="title">Generator of Link Invitation</h2>
       <h3 className="title__sub">Rizki & Linda Wedding</h3>
 
-      {loading && <h4 style={{ textAlign: 'center' }}>Memuat data..</h4>}
-
-      {!loading && (
-        <Fragment>
-          <div className="row">
-            <div className="col-md-4 col-md-offset-4">
-              <div class="form-group">
-                <label for="exampleInputEmail1">Tipe Link</label>
-                <select class="form-control" value={type} onChange={handleChange}>
-                  <option value={PERSONAL}>Individu</option>
-                  <option value={ALL}>Semua Undangan</option>
-                </select>
-              </div>
-              {renderContentType()}
+      <Fragment>
+        <div className="row">
+          <div className="col-md-4 col-md-offset-4">
+            <div class="form-group">
+              <label for="exampleInputEmail1">Tipe Link</label>
+              <select class="form-control" value={type} onChange={handleChange}>
+                <option value={PERSONAL}>Individu</option>
+              </select>
             </div>
+            {renderContentType()}
           </div>
-          <div className="row">{renderResult()}</div>
-        </Fragment>
-      )}
+        </div>
+        <div className="row">{renderResult()}</div>
+      </Fragment>
     </div>
   );
 }
