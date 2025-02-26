@@ -9,22 +9,10 @@ function FooterSection() {
             <div className="col-md-12 text-center">
               <p>
                 <small className="block">Made with ❤️ by Rizki & Linda. <br />All Rights Reserved &copy; 2024.</small>
-                {/* <small className="block">
-                  Covid-19 Icon by{' '}
-                  <a href="https://www.flaticon.com" target="_blank" rel="noreferrer">
-                    Flat Icon - Frepik
-                  </a>
-                </small> */}
                 <small className="block">
                   Song by{' '}
                   <a href="https://www.youtube.com/watch?v=o25_Tn8BnFM" target="_blank" rel="noreferrer">
                     Andmesh - Anugerah Terindah
-                  </a>
-                </small>
-                <small className="block">
-                  Original Template from{' '}
-                  <a href="https://indrakusuma.web.id/" target="_blank" rel="noreferrer">
-                    Indra Kusuma
                   </a>
                 </small>
               </p>

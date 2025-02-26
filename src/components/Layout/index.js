@@ -7,7 +7,7 @@ import '@assets/css/icomoon.css';
 import '@assets/css/bootstrap.css';
 import '@assets/css/style.css';
 
-const IMAGE_URL = `https://thekusuma.com/static/slide-6-4715e29302dbaa2ba21494c6258298d4.jpg`;
+// const IMAGE_URL = `https://thekusuma.com/static/slide-6-4715e29302dbaa2ba21494c6258298d4.jpg`;
 const META_DESCRIPTION = `Dengan penuh sukacita dan ucapan syukur kepada Tuhan, kami mohon do'a agar senantiasa diberikan kelancaran dan keberkahan. - Rizki & Linda`;
 
 function MainLayout({ children }) {
@@ -21,8 +21,8 @@ function MainLayout({ children }) {
 
         {/* font and SEO tags */}
         <meta property="og:title" content="The Wedding of Rizki & Linda" />
-        <meta property="og:image" content={IMAGE_URL} />
-        <meta property="og:url" content="https://thekusuma.com" />
+        {/* <meta property="og:image" content={IMAGE_URL} /> */}
+        <meta property="og:url" content="https://wedding.rizlin.site/" />
         <meta property="og:site_name" content="The Wedding of Rizki & Linda" />
         <meta property="og:description" content={META_DESCRIPTION} />
         {/* <meta name="twitter:title" content="The Wedding of Rizki & Linda" />

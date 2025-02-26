@@ -1,15 +1,14 @@
 import React, { Fragment, useState } from 'react';
 import { object, string, bool, func } from 'prop-types';
-import { Link } from 'gatsby';
 
 import WeddingImg from '@assets/images/wedding-logo.png';
 import CountContainer from './CountContainer';
 import ScrollToDown from './ScrollToDown';
-import { styWrapper, styHero, styBackground, styButtonWrapper } from './styles';
+import { styWrapper, styHero, styBackground } from './styles';
 
 const DELAY_TIME = 500;
 
-function WelcomeSection({ location, guestName, isInvitation, isAnonymGuest, codeLink, onClickDetail }) {
+function WelcomeSection({ guestName, isAnonymGuest, onClickDetail }) {
   const [loading, setLoading] = useState(false);
   const [alreadyDownloadData, setAlreadyDownloadData] = useState(false);
 
@@ -68,15 +67,6 @@ function WelcomeSection({ location, guestName, isInvitation, isAnonymGuest, code
                 <CountContainer />
               </div>
               {renderGuestSection()}
-              {isInvitation && (
-                <div className="row" css={styButtonWrapper}>
-                  <div className="col-md-3">
-                    <Link to={`/e-ticket?${codeLink}`}>
-                      <button className="btn btn-default btn-block">Lihat e-Ticket</button>
-                    </Link>
-                  </div>
-                </div>
-              )}
             </div>
           </div>
           <div className="row">
