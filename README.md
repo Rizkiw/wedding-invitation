@@ -6,13 +6,13 @@ Features:
  - Live Button
  - Floating Music
  - Photo Gallery
- - Pre-wedding Video 
- - And more..
-- also, this web-app has QR Guest Generator
-- and Guest Ticket Viewer
+ - Send Wishes
 
 Tech Stack:
 - GatsbyJs
+
+DB:
+- Firebase
 
 Credits
 - Original Landing Page Template (https://freehtml5.co/)
