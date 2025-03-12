@@ -27,7 +27,7 @@ function HelloSection() {
               <h3 className="sub-title hs">{finalSubtitle}</h3>
               <p className="info">
                 "Sehingga keduanya itu menjadi satu daging. Demikianlah mereka bukan lagi dua, melainkan satu. Karena itu, apa yang telah dipersatukan Allah, tidak boleh diceraikan manusia."
-                <br /><b>Markus 10:8-9</b>
+                <br /><b>Markus 10 : 8-9</b>
               </p>
             </div>
           </div>
