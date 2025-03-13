@@ -4,6 +4,7 @@ import 'aos/dist/aos.css';
 
 import Bride from '@assets/images/linda.jpg';
 import Groom from '@assets/images/rizki.jpg';
+import Bird from '@assets/images/burung/01.png';
 
 import { styWrapper } from './styles';
 

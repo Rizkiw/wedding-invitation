@@ -1133,8 +1133,11 @@ form label {
 #fh5co-footer,
 #fh5co-event,
 #fh5co-couple-story,
+#fh5co-location,
 #fh5co-couple,
 #fh5co-gallery,
+#fh5co-gift,
+#fh5co-send-wish,
 .fh5co-section {
   padding: 3em 0;
   clear: both;
@@ -1152,8 +1155,11 @@ form label {
   #fh5co-footer,
   #fh5co-event,
   #fh5co-couple-story,
+  #fh5co-location,
   #fh5co-couple,
   #fh5co-gallery,
+  #fh5co-gallgiftery,
+  #fh5co-send-wish,
   .fh5co-section {
     padding: 2em 0;
   }

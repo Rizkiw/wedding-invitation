@@ -6,9 +6,6 @@ export const styWrapper = css`
     margin-top: 16px;
   }
   
-  .info {
-    margin: 15px;
-  }
 
   @media screen and (max-width: 500px) {
     .bank-info {
@@ -17,6 +14,9 @@ export const styWrapper = css`
     }
     p {
       font-size: 16px;
+    }
+    .info {
+      margin: 15px;
     }
   }
 

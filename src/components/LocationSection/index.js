@@ -45,7 +45,7 @@ function LocationSection(isMatrimoni) {
   };
   return (
     <Fragment>
-      <div id="fh5co-couple-story" className="fh5co-section-gray" css={styWrapper}>
+      <div id="fh5co-location" className="fh5co-section-gray" css={styWrapper}>
         <div className="container">
           <div className="row">
             <div className="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">

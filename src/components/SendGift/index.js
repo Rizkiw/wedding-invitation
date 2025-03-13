@@ -28,7 +28,7 @@ function SendGift() {
 
     return (
         <Fragment>
-            <div id="fh5co-testimonial" className="fh5co-section-gray" css={styWrapper}>
+            <div id="fh5co-gift" className="fh5co-section-gray" css={styWrapper}>
                 <div className="container">
                     <div className="row">
                         <div className="row">
