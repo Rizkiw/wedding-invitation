@@ -10,7 +10,7 @@ function ClickToSeeDetail({ loading, onClick }) {
         <div className="button">
           <span></span>
         </div>
-        <span className="text">{loading ? 'Tunggu sebentar ya..' : 'Buka Undangan'}</span>
+        <span className="text">{loading ? 'Please wait..' : 'Open Invitation'}</span>
       </section>
     </div>
   );

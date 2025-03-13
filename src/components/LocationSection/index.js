@@ -33,7 +33,7 @@ function LocationSection(isMatrimoni) {
 
     return (
       <Fragment>
-        <h2 className="main-font">Lokasi Acara</h2>
+        <h2 className="main-font">Reception</h2>
         <p className="sub-title">
           <strong>Happy Wedding Hall Tangerang</strong>
           <br />

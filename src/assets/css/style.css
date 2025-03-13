@@ -1229,6 +1229,21 @@ form label {
   height: 150px;
 }
 
+.logo_bank {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.bank-info {
+  display: flex;
+}
+
+.bank-info .logo_bank img {
+  /* width: 150px; */
+  height: 50px;
+}
+
 .couple-half .groom img,
 .couple-half .bride img {
   width: 150px;
@@ -1904,6 +1919,11 @@ form label {
   -o-transition: 0.5s;
   transition: 0.5s;
   padding: 8px 20px;
+}
+
+.copy-button {
+  width: 50px;
+  height: 50px;
 }
 
 .btn.btn-md {

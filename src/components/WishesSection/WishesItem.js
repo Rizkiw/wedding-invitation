@@ -9,11 +9,7 @@ function WishesItem({ name, message, isActive }) {
     return (
       <div className="item" css={styWrapperItem}>
         <div className={`testimony-slide text-center ${isActive ? 'active' : 'hide'}`}>
-          {/* <figure>
-            <img src={image} alt="user" loading="lazy" />
-          </figure> */}
           <h4>{name}</h4>
-          {/* <span className="infoName">{infoName}</span> */}
           <blockquote>
             <p className="description">{message}</p>
           </blockquote>
@@ -26,10 +22,7 @@ function WishesItem({ name, message, isActive }) {
 }
 
 WishesItem.propTypes = {
-  // image: string.isRequired,
   name: string.isRequired,
-  // infoName: string.isRequired,
-  // description: string.isRequired,
   isActive: bool.isRequired,
 };
 

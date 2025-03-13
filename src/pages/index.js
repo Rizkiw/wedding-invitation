@@ -14,6 +14,7 @@ import WishesSection from '@components/WishesSection';
 import FooterSection from '@components/FooterSection';
 import FloatingMusic from '@components/FloatingMusic/Loadable';
 import GreetingForm from '@components/GreetingForm';
+import SendGift from '@components/SendGift';
 
 function Home({ location }) {
   const guestName = decodeURIComponent(getQueryValue(location, 'to') || '');
@@ -44,6 +45,7 @@ function Home({ location }) {
         <PhotoSection />
         <WishesSection />
         <GreetingForm />
+        <SendGift />
         <FooterSection />
       </Fragment>
     );

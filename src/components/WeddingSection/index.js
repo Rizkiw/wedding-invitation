@@ -19,7 +19,7 @@ function WeddingSection(isMatrimoni) {
 
     return (
       <Fragment>
-        <h2 className="main-font main-font__wedding">Pemberkatan & Resepsi</h2>
+        <h2 className="main-font main-font__wedding">It's The Day !</h2>
       </Fragment>
     );
   };
@@ -32,7 +32,7 @@ function WeddingSection(isMatrimoni) {
           <div className="row">
             <div className="col-md-8 col-md-offset-2 text-center fh5co-heading">
               {renderTitle()}
-              <span className="sub-title sub-title__wedding">Akan diselenggarakan pada:</span>
+              <span className="sub-title sub-title__wedding">Two souls, destined to be together, joining as one in a journey of love, trust, and endless happines.</span>
             </div>
           </div>
           <div className="row">
@@ -40,9 +40,9 @@ function WeddingSection(isMatrimoni) {
               <div className={(isMatrimoni.isMatrimoni) ? "col-md-12 col-md-offset-3" : "col-md-10 col-md-offset-1"}>
                 <div data-aos="fade-right">
                   <WeddingInfoBox
-                    title="Pemberkatan"
+                    title="Holy Matrimony"
                     time="11:00 WIB"
-                    date="Sabtu, 29 November 2025"
+                    date="Saturday, 29 November 2025"
                     description="Gereja Katolik Paroki Trinitas, Cengkareng"
                     locationUrl="https://maps.app.goo.gl/4GzqQLS2QmAjEmzc7"
                   />
@@ -50,9 +50,9 @@ function WeddingSection(isMatrimoni) {
                 {isMatrimoni.isMatrimoni === false && (
                   <div data-aos="fade-left">
                     <WeddingInfoBox
-                      title="Resepsi"
+                      title="Reception"
                       time="19:00 WIB"
-                      date="Sabtu, 29 November 2025"
+                      date="Saturday, 29 November 2025"
                       description="Happy Wedding Hall, Tangerang"
                       locationUrl="https://maps.app.goo.gl/iJyHxnJoa1qSmB7H7"
                     />

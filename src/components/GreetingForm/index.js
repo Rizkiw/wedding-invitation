@@ -54,7 +54,7 @@ const GreetingForm = () => {
                     <div className="row">
                         <div className="row">
                             <div className="col-md-8 col-md-offset-2 text-center fh5co-heading">
-                                <h2 className="main-font">Kirim Ucapan</h2>
+                                <h2 className="main-font">Send Your Wish</h2>
                             </div>
                         </div>
                         <div className="row">
@@ -64,7 +64,7 @@ const GreetingForm = () => {
                                         <input
                                             type="text"
                                             className="form-control"
-                                            placeholder="Nama Kamu"
+                                            placeholder="Your Name"
                                             value={name}
                                             onChange={(e) => setName(e.target.value)}
                                             required
@@ -74,14 +74,14 @@ const GreetingForm = () => {
                                         <textarea
                                             className="form-control"
                                             rows="4"
-                                            placeholder="Pesan Kamu"
+                                            placeholder="Your Message"
                                             value={message}
                                             onChange={(e) => setMessage(e.target.value)}
                                             required
                                         ></textarea>
                                     </div>
                                     <button type="submit" className="btn btn-primary">
-                                        Kirim
+                                        Send
                                     </button>
                                 </form>
                                 {showSuccess && ( // Success dialog

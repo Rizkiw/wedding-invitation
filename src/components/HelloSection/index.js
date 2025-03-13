@@ -8,7 +8,7 @@ import Groom from '@assets/images/rizki.jpg';
 import { styWrapper } from './styles';
 
 function HelloSection() {
-  const finalSubtitle = 'Sabtu, 29 November 2025';
+  const finalSubtitle = 'Saturday, 29 November 2025';
 
   useEffect(() => {
     AOS.init({
@@ -26,8 +26,8 @@ function HelloSection() {
               {/* <h2 className="main-font">Assalamualaikum Wr. Wb</h2> */}
               <h3 className="sub-title hs">{finalSubtitle}</h3>
               <p className="info">
-                "Sehingga keduanya itu menjadi satu daging. Demikianlah mereka bukan lagi dua, melainkan satu. Karena itu, apa yang telah dipersatukan Allah, tidak boleh diceraikan manusia."
-                <br /><b>Markus 10 : 8-9</b>
+                "And the two will become one flesh. So they are no longer two, but one flesh. Therefore what God has joined together, let no one separate"
+                <br /><b>Mark 10 : 8-9</b>
               </p>
             </div>
           </div>
@@ -39,7 +39,7 @@ function HelloSection() {
               <div className="desc-groom">
                 <h3 className="main-font">Rizki Wibisono Kristianto</h3>
                 <p className="parent-name parent-name__top">
-                  Putra Pertama Bapak Kristanto <br />& Ibu Kristina Sri Sugiarti
+                  The Son of Mr.Kristanto <br />& Ms.Kristina Sri Sugiarti
                 </p>
               </div>
             </div>
@@ -56,7 +56,7 @@ function HelloSection() {
               <div className="desc-bride">
                 <h3 className="main-font">Lindawati</h3>
                 <p className="parent-name">
-                  Putri Pertama Bapak Harianto Kusuma <br />& Alm. Ibu Neni Supiani
+                  The Daughter of Mr.Harianto Kusuma <br />& Ms.Ibu Neni Supiani (Almh)
                 </p>
               </div>
             </div>
