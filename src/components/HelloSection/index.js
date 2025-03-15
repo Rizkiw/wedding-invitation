@@ -19,16 +19,15 @@ function HelloSection() {
 
   return (
     <Fragment>
-      <div id="fh5co-couple" css={styWrapper}>
+      <div id="fh5co-couple" className="fh5co-section-white" css={styWrapper}>
         <div className="container">
           <div className="row">
             <div className="col-md-8 col-md-offset-2 text-center fh5co-heading" >
-              {/* <h2 className="main-font">Assalamualaikum Wr. Wb</h2> */}
               <h3 className="sub-title hs">{finalSubtitle}</h3>
               <p className="info">
                 "And the two will become one flesh. So they are no longer two, but one flesh. Therefore what God has joined together, let no one separate"
-                <br /><b>Mark 10 : 8-9</b>
               </p>
+              <p><b>Mark 10 : 8-9</b></p>
             </div>
           </div>
           <div className="couple-wrap">

@@ -1165,6 +1165,12 @@ form label {
   }
 }
 
+.fh5co-section-white {
+  background: rgb(255, 255, 255);
+  /* background-image: url('../css/texture.png');
+  background-size: cover; */
+}
+
 .fh5co-section-gray {
   background: rgba(0, 0, 0, 0.04);
 }
@@ -1221,7 +1227,7 @@ form label {
 .couple-half h3 {
   font-family: 'Sacramento', Arial, serif;
   color: #f14e95;
-  font-size: 30px;
+  font-size: 40px;
 }
 
 .couple-half .groom,

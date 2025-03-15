@@ -1,6 +1,10 @@
 import { css } from '@emotion/core';
 
 export const styWrapper = css`
+  .info {
+    font-style: italic;
+  }
+
   .sub-title {
     color: #828282;
     font-weight: 600;
