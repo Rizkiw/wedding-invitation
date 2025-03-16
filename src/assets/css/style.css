@@ -1167,8 +1167,8 @@ form label {
 
 .fh5co-section-white {
   background: rgb(255, 255, 255);
-  /* background-image: url('../css/texture.png');
-  background-size: cover; */
+  background-image: url('../css/texture.png');
+  background-size: cover;
 }
 
 .fh5co-section-gray {

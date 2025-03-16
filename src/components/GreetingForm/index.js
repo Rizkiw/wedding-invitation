@@ -49,7 +49,7 @@ const GreetingForm = () => {
 
     return (
         <Fragment>
-            <div id="fh5co-send-wish" css={styWrapper} >
+            <div id="fh5co-send-wish" className="fh5co-section-white" css={styWrapper} >
                 <div className="container" data-aos="zoom-in">
                     <div className="row">
                         <div className="row">

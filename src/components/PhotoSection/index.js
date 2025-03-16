@@ -19,7 +19,7 @@ function PhotoSection() {
   // };
 
   return (
-    <div id="fh5co-gallery">
+    <div id="fh5co-gallery" className="fh5co-section-white" >
       <div className="container">
         <div className="row">
           <div className="row">
