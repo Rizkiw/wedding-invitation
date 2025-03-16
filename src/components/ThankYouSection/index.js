@@ -1,30 +1,8 @@
-import React, { Fragment, useState } from 'react';
-import useClipboard from '@hooks/useClipboard';
-import LogoBca from '@assets/images/bank/logo_bca.webp';
-import LogoMandiri from '@assets/images/bank/logo_mandiri.webp';
-import LogoCopy from '@assets/images/icon/copy.png';
+import React, { Fragment } from 'react';
 import { styWrapper } from './style';
 
 
 function SendGift() {
-    const { handleCopy } = useClipboard();
-    const [successBCA, setSuccessBCA] = useState(false);
-    const [successMandiri, setSuccessMandiri] = useState(false);
-
-    const rekMandiri = '1180010239563';
-    const rekBCA = '0010560128';
-
-    const copyBCA = async () => {
-        await handleCopy(rekBCA);
-        setSuccessBCA(true);
-        setTimeout(() => setSuccessBCA(false), 2000); // Reset after 2 sec
-    };
-
-    const copyMandiri = async () => {
-        await handleCopy(rekMandiri);
-        setSuccessMandiri(true);
-        setTimeout(() => setSuccessMandiri(false), 2000);
-    };
 
     return (
         <Fragment>
