@@ -18,6 +18,9 @@ export const styWithAnimation = (isActive) => css`
 `;
 
 export const styWrapperItem = css`
+  min-height: 180px; /* Adjust as needed */
+  overflow: hidden; /* Prevents jumping effect */
+
   h4 {
     color: #828282;
     font-weight: bold;
