@@ -17,6 +17,7 @@
     "@emotion/core": "^10.0.28",
     "@loadable/component": "^5.12.0",
     "add": "^2.0.6",
+    "animate.css": "^4.1.1",
     "aos": "^2.3.4",
     "firebase": "^11.0.2",
     "gatsby": "^2.21.37",

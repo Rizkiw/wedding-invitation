@@ -1144,8 +1144,12 @@ form label {
   clear: both;
 }
 
-#fh5co-couple {
-  min-height: 50vh;
+#fh5co-couple,
+#fh5co-event,
+#fh5co-location,
+#fh5co-gallery {
+  min-height: 100vh;
+  align-content: center;
 }
 
 @media screen and (max-width: 768px) {

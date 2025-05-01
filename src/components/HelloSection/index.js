@@ -1,9 +1,13 @@
 import React, { Fragment, useEffect } from 'react';
 import AOS from 'aos';
+import 'animate.css';
 import 'aos/dist/aos.css';
 
 import Bride from '@assets/images/linda.jpg';
 import Groom from '@assets/images/rizki.jpg';
+import Rose from '@assets/images/particles/rose-1.webp';
+import Leaf from '@assets/images/particles/leaf-1.webp';
+import Bird from '@assets/images/particles/parket.webp';
 
 import { styWrapper } from './styles';
 
@@ -20,14 +24,54 @@ function HelloSection() {
   return (
     <Fragment>
       <div id="fh5co-couple" className="fh5co-section-white" css={styWrapper}>
+        <div className="rose-container">
+          <div data-aos="fade-down-right">
+            <img
+              src={Rose}
+              alt="rose-animated"
+              className="img-responsive rose-sway rose-top-left"
+              loading="lazy"
+            />
+            <img
+              src={Leaf}
+              alt="leaf-animated"
+              className="img-responsive leaf-sway leaf-top-left"
+              loading="lazy"
+            />
+          </div>
+          <div data-aos="fade-up-right">
+            <img
+              src={Leaf}
+              alt="leaf-animated"
+              className="img-responsive leaf-bottom-left"
+              loading="lazy"
+            />
+          </div>
+          <div data-aos="fade-down-left">
+            <img
+              src={Bird}
+              alt="bird-animated"
+              className="img-responsive bird-top-right"
+              loading="lazy"
+            />
+          </div>
+          <div data-aos="fade-up-left">
+            <img
+              src={Rose}
+              alt="rose-animated"
+              className="img-responsive rose-bottom-right"
+              loading="lazy"
+            />
+          </div>
+        </div>
         <div className="container">
           <div className="row">
             <div className="col-md-8 col-md-offset-2 text-center fh5co-heading" >
-              <h3 className="sub-title hs">{finalSubtitle}</h3>
-              <p className="info">
+              <h3 className="sub-title hs" data-aos="fade-down">{finalSubtitle}</h3>
+              <p className="info" data-aos="fade-down-right">
                 "And the two will become one flesh. So they are no longer two, but one flesh. Therefore what God has joined together, let no one separate"
               </p>
-              <p><b>Mark 10 : 8-9</b></p>
+              <p data-aos="fade-down-left"><b>Mark 10 : 8-9</b></p>
             </div>
           </div>
           <div className="couple-wrap">
