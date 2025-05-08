@@ -6,7 +6,7 @@ export const styWrapper = css`
   }
 
   .sub-title {
-    color: #828282;
+    color:rgb(53, 53, 53);
     font-weight: 600;
     letter-spacing: 1px;
     line-height: 20px;
@@ -19,6 +19,7 @@ export const styWrapper = css`
   p {
     font-size: 16px;
     margin-top: 16px;
+    color:rgb(100, 99, 99);
   }
   
 @keyframes sway {

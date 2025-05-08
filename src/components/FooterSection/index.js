@@ -11,8 +11,8 @@ function FooterSection() {
                 <small className="block">Made with ❤️ by Rizki & Linda. <br />All Rights Reserved &copy; 2024.</small>
                 <small className="block">
                   Song by{' '}
-                  <a href="https://www.youtube.com/watch?v=o25_Tn8BnFM" target="_blank" rel="noreferrer">
-                    Andmesh - Anugerah Terindah
+                  <a href="https://www.youtube.com/watch?v=BqFEtDsTUrQ" target="_blank" rel="noreferrer">
+                    Nyoman Paul, Andi Rianto – The Way You Look At Me
                   </a>
                 </small>
               </p>
