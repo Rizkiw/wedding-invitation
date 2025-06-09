@@ -32,6 +32,10 @@ body {
   transition: 0.5s;
 }
 
+.particles-container {
+  position: relative;
+}
+
 .offcanvas #page {
   overflow: hidden;
   position: absolute;

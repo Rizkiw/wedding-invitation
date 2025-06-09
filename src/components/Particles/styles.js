@@ -150,7 +150,7 @@ export const styParticles = css`
     z-index: 0;
   }
 
-  .bird-top-right, .leaf-bottom-left {
+  .bird-top-right, .leaf-bottom-left .leaf-bottom-right {
     display: none;
   }
 }

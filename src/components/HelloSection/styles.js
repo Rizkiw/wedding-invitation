@@ -16,10 +16,6 @@ export const styWrapper = css`
     z-index: 1;
   }
 
-  .particles-container {
-    position: relative;
-  }
-
   p {
     font-size: 16px;
     margin-top: 16px;
