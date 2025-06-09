@@ -5,9 +5,10 @@ import 'aos/dist/aos.css';
 
 import Bride from '@assets/images/linda.jpg';
 import Groom from '@assets/images/rizki.jpg';
-import Rose from '@assets/images/particles/rose-1.webp';
-import Leaf from '@assets/images/particles/leaf-1.webp';
-import Bird from '@assets/images/particles/parket.webp';
+
+import Rose from '@components/Particles/Rose';
+import Leaf from '@components/Particles/Leaf';
+import Bird from '@components/Particles/Bird';
 
 import { styWrapper } from './styles';
 
@@ -24,44 +25,19 @@ function HelloSection() {
   return (
     <Fragment>
       <div id="fh5co-couple" className="fh5co-section-white" css={styWrapper}>
-        <div className="rose-container">
+        <div className="particles-container">
           <div data-aos="fade-down-right">
-            <img
-              src={Rose}
-              alt="rose-animated"
-              className="img-responsive rose-sway rose-top-left"
-              loading="lazy"
-            />
-            <img
-              src={Leaf}
-              alt="leaf-animated"
-              className="img-responsive leaf-sway leaf-top-left"
-              loading="lazy"
-            />
+            <Leaf className="img-responsive leaf-top-left" />
+            <Rose className="img-responsive rose-top-left" />
           </div>
           <div data-aos="fade-up-right">
-            <img
-              src={Leaf}
-              alt="leaf-animated"
-              className="img-responsive leaf-bottom-left"
-              loading="lazy"
-            />
+            <Leaf className="img-responsive leaf-bottom-left" />
           </div>
           <div data-aos="fade-down-left">
-            <img
-              src={Bird}
-              alt="bird-animated"
-              className="img-responsive bird-top-right"
-              loading="lazy"
-            />
+            <Bird className="img-responsive bird-top-right" />
           </div>
           <div data-aos="fade-up-left">
-            <img
-              src={Rose}
-              alt="rose-animated"
-              className="img-responsive rose-bottom-right"
-              loading="lazy"
-            />
+            <Rose className="img-responsive rose-bottom-right" />
           </div>
         </div>
         <div className="container">
@@ -69,9 +45,9 @@ function HelloSection() {
             <div className="col-md-8 col-md-offset-2 text-center fh5co-heading" >
               <h3 className="sub-title hs" data-aos="fade-down">{finalSubtitle}</h3>
               <p className="info" data-aos="fade-down-right">
-                "And the two will become one flesh. So they are no longer two, but one flesh. Therefore what God has joined together, let no one separate"
+                "So they are no longer two but one flesh. What therefore God has joined together, let not man separate.”
               </p>
-              <p data-aos="fade-down-left"><b>Mark 10 : 8-9</b></p>
+              <p data-aos="fade-down-left"><b>Matthew 19:6</b></p>
             </div>
           </div>
           <div className="couple-wrap">
