@@ -3,8 +3,10 @@ import AOS from 'aos';
 import 'animate.css';
 import 'aos/dist/aos.css';
 
-import Bride from '@assets/images/linda.jpg';
-import Groom from '@assets/images/rizki.jpg';
+import Bride from '@assets/images/linda.webp';
+import BrideMobile from '@assets/images/linda-mobile.webp';
+import Groom from '@assets/images/rizki.webp';
+import GroomMobile from '@assets/images/rizki-mobile.webp';
 
 import Rose from '@components/Particles/Rose';
 import Leaf from '@components/Particles/Leaf';
@@ -21,6 +23,13 @@ function HelloSection() {
       once: true
     });
   }, []);
+
+  // Detect mobile device
+  const isMobile = typeof window !== 'undefined' && window.innerWidth <= 768;
+
+  // You can use different images for mobile if needed
+  const GroomImg = isMobile ? GroomMobile : Groom;
+  const BrideImg = isMobile ? BrideMobile : Bride;
 
   return (
     <Fragment>
@@ -53,7 +62,7 @@ function HelloSection() {
           <div className="couple-wrap">
             <div className="couple-half" data-aos="fade-right">
               <div className="groom">
-                <img src={Groom} alt="groom" className="img-responsive" loading="lazy" />
+                <img src={GroomImg} alt="groom" className="img-responsive" loading="lazy" />
               </div>
               <div className="desc-groom">
                 <h3 className="main-font">Rizki Wibisono Kristianto</h3>
@@ -70,7 +79,7 @@ function HelloSection() {
             </div>
             <div className="couple-half" data-aos="fade-left">
               <div className="bride">
-                <img src={Bride} alt="bride" className="img-responsive" loading="lazy" />
+                <img src={BrideImg} alt="bride" className="img-responsive" loading="lazy" />
               </div>
               <div className="desc-bride">
                 <h3 className="main-font">Lindawati</h3>
