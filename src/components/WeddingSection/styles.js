@@ -1,5 +1,6 @@
 import { css } from '@emotion/core';
-import Background from '@assets/images/bg-wedding2.webp';
+import Background from '@assets/images/bg-wedding.webp';
+import BackgroundMobile from '@assets/images/bg-wedding-mobile.webp';
 
 export const styWrapper = css`
   background-image: url(${Background});
@@ -9,10 +10,8 @@ export const styWrapper = css`
   min-height: 70vh;
   color: #fff !important;
 
-  .bismillah {
-    color: #fff !important;
-    font-size: 16px !important;
-    font-family: sans-serif;
+  @media screen and (max-width: 768px) {
+    background-image: url(${BackgroundMobile});
   }
 
   .sub-title {
