@@ -136,7 +136,7 @@ export const styBackground = css`
     }
 
     .sub-title {
-      font-size: 28px;
+      font-size: 35px;
     }
   }
 
@@ -146,7 +146,7 @@ export const styBackground = css`
     }
 
     .sub-title {
-      font-size: 28px;
+      font-size: 35px;
     }
   }
 `;
