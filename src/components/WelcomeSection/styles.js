@@ -180,7 +180,7 @@ export const styWrapper = css`
     font-family: 'Cookie', cursive;
     margin: 0;
     color: #fff;
-    font-size: 30px;
+    font-size: 40px;
   }
 
   .getting-married {
