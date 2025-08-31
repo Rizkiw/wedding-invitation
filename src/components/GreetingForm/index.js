@@ -49,9 +49,9 @@ const GreetingForm = () => {
 
     return (
         <Fragment>
-            <div id="fh5co-send-wish" className="fh5co-section-white" css={styWrapper} >
+            <div id="fh5co-send-wish" >
                 <div className="container" data-aos="zoom-in">
-                    <div className="row">
+                    <div className="">
                         <div className="row">
                             <div className="col-md-8 col-md-offset-2 text-center fh5co-heading">
                                 <h2 className="main-font">Send Your Wish</h2>
@@ -59,7 +59,7 @@ const GreetingForm = () => {
                         </div>
                         <div className="row">
                             <div className="col-md-4 col-md-offset-4">
-                                <form onSubmit={handleSubmit} className="form-greetings">
+                                <form onSubmit={handleSubmit} className="form-greetings text-center">
                                     <div className="form-group">
                                         <input
                                             type="text"

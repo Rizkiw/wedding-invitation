@@ -1259,6 +1259,13 @@ form label {
   margin-bottom: 20px;
 }
 
+.detail_bank {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
 .bank-info {
   display: flex;
 }

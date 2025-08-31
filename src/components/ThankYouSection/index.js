@@ -6,7 +6,7 @@ function SendGift() {
 
     return (
         <Fragment>
-            <div id="fh5co-thank-you" css={styWrapper}>
+            <div id="fh5co-thank-you" className="fh5co-section-gray" css={styWrapper}>
                 <div className="container">
                     <div className="row">
                         <div className="row">

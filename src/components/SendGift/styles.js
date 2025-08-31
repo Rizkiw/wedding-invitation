@@ -1,9 +1,12 @@
 import { css } from '@emotion/core';
 
 export const styWrapper = css`
-  p {
+  h4 {
     font-size: 16px;
     margin-top: 16px;
+    font-weight: bold;
+    color: #828282;
+    letter-spacing: 0.5px;
   }
   
 
@@ -12,7 +15,7 @@ export const styWrapper = css`
         display:flex;
         flex-direction: column;
     }
-    p {
+    h4 {
       font-size: 16px;
     }
     .info {
@@ -25,7 +28,7 @@ export const styWrapper = css`
         display:flex;
         flex-direction: column;
     }
-    p {
+    h4 {
       font-size: 14px;
     }
   }

@@ -1,9 +1,10 @@
 import React from 'react';
 import WishesContainer from './WishesContainer';
+import GreetingForm from '../GreetingForm';
 
 function WishesSection() {
   return (
-    <div id="fh5co-testimonial" className="fh5co-section-gray">
+    <div id="fh5co-testimonial" className="fh5co-section-white">
       <div className="container">
         <div className="row">
           <div className="row">
@@ -18,6 +19,7 @@ function WishesSection() {
           </div>
         </div>
       </div>
+      <GreetingForm />
     </div>
   );
 }

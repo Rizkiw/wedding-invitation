@@ -3,7 +3,7 @@ import React, { Fragment } from 'react';
 function FooterSection() {
   return (
     <Fragment>
-      <footer id="fh5co-footer" className="fh5co-section-gray" role="contentinfo">
+      <footer id="fh5co-footer" className="fh5co-section-white" role="contentinfo">
         <div className="container" >
           <div className="row copyright">
             <div className="col-md-12 text-center">

@@ -45,7 +45,7 @@ function Home({ location }) {
         {/* <StorySection /> */}
         <PhotoSection />
         <WishesSection />
-        <GreetingForm />
+        {/* <GreetingForm /> */}
         <SendGift />
         <ThankYouSection />
         <FooterSection />
