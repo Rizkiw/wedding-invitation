@@ -21,11 +21,11 @@ function Home({ location }) {
   const guestName = decodeURIComponent(getQueryValue(location, 'to') || '');
   const isInvitation = getQueryValue(location, 'type') === 'invitation';
   const isMatrimoni = getQueryValue(location, 'type') === 'holymatrimoni';
+  const isHome = getQueryValue(location, 'loc') === 'home';
   const isAnonymGuest = guestName === '' && !isInvitation;
   const codeLink = getQueryValue(location, 'code') || '';
   const finalTicketLink = `code=${codeLink}&name=${guestName}`;
   const [showDetailContent, setShowDetailContent] = useState(false);
-
   const handleClickDetail = () => {
     setShowDetailContent(true);
   };
@@ -37,10 +37,10 @@ function Home({ location }) {
         <FloatingMusic />
         <HelloSection />
         <WeddingSection
-          isMatrimoni={isMatrimoni}
+          isMatrimoni={isMatrimoni} isHome={isHome}
         />
         <LocationSection
-          isMatrimoni={isMatrimoni}
+          isMatrimoni={isMatrimoni} isHome={isHome}
         />
         {/* <StorySection /> */}
         <PhotoSection />

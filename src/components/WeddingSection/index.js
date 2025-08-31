@@ -6,16 +6,16 @@ import 'aos/dist/aos.css';
 import WeddingInfoBox from './WeddingInfoBox';
 import { styWrapper } from './styles';
 
-function WeddingSection(isMatrimoni) {
+function WeddingSection(params) {
   useEffect(() => {
     AOS.init({
       duration: 1000,
       once: true
     });
   }, []);
-
   const renderTitle = () => {
-    if (isMatrimoni.isMatrimoni) return <h2 className="main-font main-font__wedding">Pemberkatan</h2>;
+    if (params.isMatrimoni) return <h2 className="main-font main-font__wedding">Pemberkatan</h2>;
+    if (params.isHome) return <h2 className="main-font main-font__wedding">Ngunduh Mantu</h2>;
 
     return (
       <Fragment>
@@ -37,17 +37,19 @@ function WeddingSection(isMatrimoni) {
           </div>
           <div className="row">
             {
-              <div className={(isMatrimoni.isMatrimoni) ? "col-md-12 col-md-offset-3" : "col-md-10 col-md-offset-1"}>
-                <div data-aos="fade-right">
-                  <WeddingInfoBox
-                    title="Holy Matrimony"
-                    time="11:00 WIB"
-                    date="Saturday, 29 November 2025"
-                    description="Gereja Katolik Paroki Trinitas, Cengkareng"
-                    locationUrl="https://maps.app.goo.gl/4GzqQLS2QmAjEmzc7"
-                  />
-                </div>
-                {isMatrimoni.isMatrimoni === false && (
+              <div className={(params.isMatrimoni || params.isHome) ? "col-md-12 col-md-offset-3" : "col-md-10 col-md-offset-1"}>
+                {params.isHome === false && (
+                  <div data-aos="fade-right">
+                    <WeddingInfoBox
+                      title="Holy Matrimony"
+                      time="11:00 WIB"
+                      date="Saturday, 29 November 2025"
+                      description="Gereja Katolik Paroki Trinitas, Cengkareng"
+                      locationUrl="https://maps.app.goo.gl/4GzqQLS2QmAjEmzc7"
+                    />
+                  </div>
+                )}
+                {params.isHome === false && params.isMatrimoni === false && (
                   <div data-aos="fade-left">
                     <WeddingInfoBox
                       title="Reception"
@@ -55,6 +57,17 @@ function WeddingSection(isMatrimoni) {
                       date="Saturday, 29 November 2025"
                       description="Happy Wedding Hall, Tangerang"
                       locationUrl="https://maps.app.goo.gl/iJyHxnJoa1qSmB7H7"
+                    />
+                  </div>
+                )}
+                {params.isHome === true && (
+                  <div data-aos="fade-up">
+                    <WeddingInfoBox
+                      title="Ngunduh Mantu"
+                      time="10:00 WIB"
+                      date="Sunday, 30 November 2025"
+                      description="Serdang Asri 2 Blok E 11 No.21, Kab. Tangerang"
+                      locationUrl="https://maps.app.goo.gl/6nqDhkfkaKxd6oZ17"
                     />
                   </div>
                 )}
