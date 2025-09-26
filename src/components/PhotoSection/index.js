@@ -2,6 +2,9 @@ import React from 'react';
 import ImageGallery from 'react-image-gallery';
 import 'react-image-gallery/styles/css/image-gallery.css';
 import { photos } from './photo-data';
+import { styWrapper } from './styles';
+import Rose from '@components/Particles/Rose';
+import Leaf from '@components/Particles/Leaf';
 
 function PhotoSection() {
   // const renderYoutubeVideo = () => {
@@ -19,7 +22,16 @@ function PhotoSection() {
   // };
 
   return (
-    <div id="fh5co-gallery" className="fh5co-section-gray"  >
+    <div id="fh5co-gallery" className="fh5co-section-gray" css={styWrapper}>
+      <div className="particles-container">
+        <div data-aos="fade-down-right">
+          <Leaf className="img-responsive leaf-top-right" />
+          <Rose className="img-responsive rose-top-left" />
+        </div>
+        <div data-aos="fade-up-left">
+          <Rose className="img-responsive rose-bottom-right" />
+        </div>
+      </div>
       <div className="container">
         <div className="row">
           <div className="row">
@@ -36,9 +48,10 @@ function PhotoSection() {
                 items={photos}
                 showBullets={false}
                 lazyLoad={true}
-                autoPlay={true}  // Enable autoplay
-                slideInterval={3000}  // Set slide interval to 3000ms (3 seconds)
-              />;
+                autoPlay={true} // Enable autoplay
+                slideInterval={3000} // Set slide interval to 3000ms (3 seconds)
+              />
+              ;
             </div>
           </div>
         </div>

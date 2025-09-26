@@ -4,47 +4,52 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 import { styWrapper } from './styles';
+import Rose from '@components/Particles/Rose';
+import Leaf from '@components/Particles/Leaf';
 
 function LocationSection(params) {
-
   useEffect(() => {
     AOS.init({
       duration: 1000,
-      once: true
+      once: true,
     });
   }, []);
 
-  const gereja = "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15867.521469080304!2d106.7251564!3d-6.1467661!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f7f8224337bf%3A0x5207de20b85d0835!2sGereja%20Katolik%20Paroki%20Trinitas%2C%20Cengkareng!5e0!3m2!1sid!2sid!4v1732435132885!5m2!1sid!2sid"
-  const resepsi = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.621861305265!2d106.63074327591373!3d-6.181338893806146!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f8d594f72dc3%3A0xae92741b5907139f!2sHappy%20Wedding%20Hall!5e0!3m2!1sid!2sid!4v1722790547942!5m2!1sid!2sid"
-  const home = "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d247.8685793008675!2d106.53426085035704!3d-6.277235578414783!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e4207002ffa783d%3A0x74bdcf99bfac63!2sRumah%20Pak%20Kris!5e0!3m2!1sid!2sid!4v1756624635810!5m2!1sid!2sid"
+  const gereja =
+    'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15867.521469080304!2d106.7251564!3d-6.1467661!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f7f8224337bf%3A0x5207de20b85d0835!2sGereja%20Katolik%20Paroki%20Trinitas%2C%20Cengkareng!5e0!3m2!1sid!2sid!4v1732435132885!5m2!1sid!2sid';
+  const resepsi =
+    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.621861305265!2d106.63074327591373!3d-6.181338893806146!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f8d594f72dc3%3A0xae92741b5907139f!2sHappy%20Wedding%20Hall!5e0!3m2!1sid!2sid!4v1722790547942!5m2!1sid!2sid';
+  const home =
+    'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d247.8685793008675!2d106.53426085035704!3d-6.277235578414783!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e4207002ffa783d%3A0x74bdcf99bfac63!2sRumah%20Pak%20Kris!5e0!3m2!1sid!2sid!4v1756624635810!5m2!1sid!2sid';
 
-  const locationUrl = (params.isMatrimoni) ? gereja : (params.isHome) ? home : resepsi;
+  const locationUrl = params.isMatrimoni ? gereja : params.isHome ? home : resepsi;
 
   const renderTitleLocation = () => {
-    if (params.isMatrimoni) return (
-      <Fragment>
-        <h2 className="main-font">Lokasi Pemberkatan</h2>
-        <p className="sub-title">
-          <strong>Gereja Katolik Paroki Trinitas</strong>
-          <br />
-          Jl. Utama III No.23, RT.11/RW.3, Cengkareng Barat, Kecamatan Cengkareng, <br />
-          Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 11730
-        </p>
+    if (params.isMatrimoni)
+      return (
+        <Fragment>
+          <h2 className="main-font">Lokasi Pemberkatan</h2>
+          <p className="sub-title">
+            <strong>Gereja Katolik Paroki Trinitas</strong>
+            <br />
+            Jl. Utama III No.23, RT.11/RW.3, Cengkareng Barat, Kecamatan Cengkareng, <br />
+            Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 11730
+          </p>
+        </Fragment>
+      );
 
-      </Fragment>
-    );
-
-    if (params.isHome) return (
-      <Fragment>
-        <h2 className="main-font">Lokasi Ngunduh Mantu</h2>
-        <p className="sub-title">
-          <strong>Serdang Asri 2</strong>
-          <br />
-          Serdang Asri 2 Blok E 11 No.21, RT.05/RW.01, Kecamatan Panongan, <br />
-          Kab. Tangerang, Banten 15710
-        </p>
-      </Fragment>
-    );
+    if (params.isHome)
+      return (
+        <Fragment>
+          <h2 className="main-font">Lokasi Ngunduh Mantu</h2>
+          <p className="sub-title">
+            <strong>Serdang Asri 2</strong>
+            <br />
+            Serdang Asri 2 Blok E 11 No.21, RT.05/RW.01, Kecamatan Panongan, <br />
+            Kab. Tangerang, Banten 15710
+          </p>
+        </Fragment>
+      );
 
     return (
       <Fragment>
@@ -61,6 +66,15 @@ function LocationSection(params) {
   return (
     <Fragment>
       <div id="fh5co-location" className="fh5co-section-white" css={styWrapper}>
+        <div className="particles-container">
+          <div data-aos="fade-down-right">
+            <Leaf className="img-responsive leaf-top-left" />
+            <Rose className="img-responsive rose-top-left" />
+          </div>
+          <div data-aos="fade-up-left">
+            <Rose className="img-responsive rose-bottom-right" />
+          </div>
+        </div>
         <div className="container">
           <div className="row">
             <div className="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">

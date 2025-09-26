@@ -13,7 +13,7 @@ import PhotoSection from '@components/PhotoSection/Loadable';
 import WishesSection from '@components/WishesSection';
 import FooterSection from '@components/FooterSection';
 import FloatingMusic from '@components/FloatingMusic/Loadable';
-import GreetingForm from '@components/GreetingForm';
+// import GreetingForm from '@components/GreetingForm';
 import SendGift from '@components/SendGift';
 import ThankYouSection from '@components/ThankYouSection';
 
@@ -36,12 +36,8 @@ function Home({ location }) {
       <Fragment>
         <FloatingMusic />
         <HelloSection />
-        <WeddingSection
-          isMatrimoni={isMatrimoni} isHome={isHome}
-        />
-        <LocationSection
-          isMatrimoni={isMatrimoni} isHome={isHome}
-        />
+        <WeddingSection isMatrimoni={isMatrimoni} isHome={isHome} />
+        <LocationSection isMatrimoni={isMatrimoni} isHome={isHome} />
         {/* <StorySection /> */}
         <PhotoSection />
         <WishesSection />

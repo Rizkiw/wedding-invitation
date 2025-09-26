@@ -20,7 +20,7 @@ function HelloSection() {
   useEffect(() => {
     AOS.init({
       duration: 1000,
-      once: true
+      once: true,
     });
   }, []);
 
@@ -51,12 +51,16 @@ function HelloSection() {
         </div>
         <div className="container">
           <div className="row">
-            <div className="col-md-8 col-md-offset-2 text-center fh5co-heading" >
-              <h3 className="sub-title hs" data-aos="fade-down">{finalSubtitle}</h3>
+            <div className="col-md-8 col-md-offset-2 text-center fh5co-heading">
+              <h3 className="sub-title hs" data-aos="fade-down">
+                {finalSubtitle}
+              </h3>
               <p className="info" data-aos="fade-down-right">
                 "So they are no longer two but one flesh. What therefore God has joined together, let not man separate.”
               </p>
-              <p data-aos="fade-down-left"><b>Matthew 19:6</b></p>
+              <p data-aos="fade-down-left">
+                <b>Matthew 19:6</b>
+              </p>
             </div>
           </div>
           <div className="couple-wrap">

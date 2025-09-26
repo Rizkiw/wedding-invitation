@@ -3,34 +3,33 @@ import { css } from '@emotion/core';
 export const styWrapper = css`
   .rose-top-left {
     top: -100px;
+    width: 400px;
   }
-  .leaf-top-left {
+  .leaf-top-right {
     top: 10px;
   }
   .rose-bottom-right {
     top: 400px;
-    width: 450px;
+    width: 400px;
   }
 
   @media screen and (max-width: 500px) {
+    .rose-top-left {
+      top: -200px;
+      width: 200px;
+    }
+
+    .leaf-top-right {
+      top: 400px;
+    }
+
     .rose-bottom-right {
-      top: -550px;
-      width: 150px;
-    }
-
-    .sub-title {
-      font-size: 16px;
-      margin: 0 0 8px 0;
-    }
-
-    p {
-      font-size: 16px;
+      display: none;
     }
   }
-
   @media screen and (max-width: 400px) {
     .rose-top-left,
-    .leaf-top-left,
+    .leaf-top-right,
     .rose-bottom-right {
       display: none;
     }
