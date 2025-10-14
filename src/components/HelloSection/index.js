@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect } from 'react';
+import React, { Fragment, useState, useEffect } from 'react';
 import AOS from 'aos';
 import 'animate.css';
 import 'aos/dist/aos.css';
@@ -15,13 +15,24 @@ import Bird from '@components/Particles/Bird';
 import { styWrapper } from './styles';
 
 function HelloSection() {
-  const finalSubtitle = 'Saturday, 29 November 2025';
+  const [finalSubtitle, setFinalSubtitle] = useState('Saturday, 29 November 2025');
 
   useEffect(() => {
     AOS.init({
       duration: 1000,
       once: true,
     });
+  }, []);
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const params = new URLSearchParams(window.location.search);
+      const loc = params.get('loc');
+
+      if (loc) {
+        setFinalSubtitle('Sunday, 30 November 2025');
+      }
+    }
   }, []);
 
   // Detect mobile device

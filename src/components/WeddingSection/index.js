@@ -10,7 +10,7 @@ function WeddingSection(params) {
   useEffect(() => {
     AOS.init({
       duration: 1000,
-      once: true
+      once: true,
     });
   }, []);
   const renderTitle = () => {
@@ -32,19 +32,27 @@ function WeddingSection(params) {
           <div className="row">
             <div className="col-md-8 col-md-offset-2 text-center fh5co-heading">
               {renderTitle()}
-              <span className="sub-title sub-title__wedding">Two souls, destined to be together, joining as one in a journey of love, trust, and endless happines.</span>
+              <span className="sub-title sub-title__wedding">
+                Two souls, destined to be together, joining as one in a journey of love, trust, and endless happines.
+              </span>
             </div>
           </div>
           <div className="row">
             {
-              <div className={(params.isMatrimoni || params.isHome) ? "col-md-12 col-md-offset-3" : "col-md-10 col-md-offset-1"}>
+              <div
+                className={
+                  params.isMatrimoni || params.isHome ? 'col-md-12 col-md-offset-3' : 'col-md-10 col-md-offset-1'
+                }
+              >
                 {params.isHome === false && (
                   <div data-aos="fade-right">
                     <WeddingInfoBox
                       title="Holy Matrimony"
                       time="11:00 WIB"
                       date="Saturday, 29 November 2025"
-                      description="Gereja Katolik Paroki Trinitas, Cengkareng"
+                      description={
+                        'Gereja Katolik Paroki Trinitas\nJl. Utama III No.23, RT.11/RW.3, Cengkareng Barat, Kecamatan Cengkareng, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 11730'
+                      }
                       locationUrl="https://maps.app.goo.gl/4GzqQLS2QmAjEmzc7"
                     />
                   </div>
@@ -55,7 +63,10 @@ function WeddingSection(params) {
                       title="Reception"
                       time="19:00 WIB"
                       date="Saturday, 29 November 2025"
-                      description="Happy Wedding Hall, Tangerang"
+                      description={
+                        'Happy Wedding Hall\nJl. Mt. Haryono N No.26, RT.002/RW.002, Sukasari, Kec. Tangerang, Kota Tangerang, Banten 15118'
+                      }
+                      // description="Happy Wedding Hall, Tangerang"
                       locationUrl="https://maps.app.goo.gl/iJyHxnJoa1qSmB7H7"
                     />
                   </div>
@@ -66,7 +77,10 @@ function WeddingSection(params) {
                       title="Ngunduh Mantu"
                       time="10:00 WIB"
                       date="Sunday, 30 November 2025"
-                      description="Serdang Asri 2 Blok E 11 No.21, Kab. Tangerang"
+                      description={
+                        'Serdang Asri 2 Blok E 11 No.21, RT.05/RW.01\nKecamatan Panongan, Kab. Tangerang, Banten 15710'
+                      }
+                      // description="Serdang Asri 2 Blok E 11 No.21, Kab. Tangerang"
                       locationUrl="https://maps.app.goo.gl/6nqDhkfkaKxd6oZ17"
                     />
                   </div>

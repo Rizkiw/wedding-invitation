@@ -21,7 +21,7 @@ function WeddingInfoBox({ title, date, time, description, locationUrl }) {
             <i className="icon-location-pin"></i>
             <span>
               <a href={locationUrl} target="_blank" rel="noopener noreferrer">
-                <span dangerouslySetInnerHTML={{ __html: description }} />
+                <span dangerouslySetInnerHTML={{ __html: description.replace(/\n/g, '<br />') }} />
               </a>
             </span>
           </div>
