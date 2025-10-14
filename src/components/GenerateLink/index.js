@@ -1,11 +1,12 @@
+// src/components/GenerateLink.jsx
 import React, { useState, useEffect, Fragment } from 'react';
 
 const PERSONAL = 1;
 
 function GenerateLink() {
-
   const [type, setType] = useState(PERSONAL);
-  const [name, setName] = useState();
+  const [loc, setLoc] = useState('HPW'); // ✅ default value
+  const [name, setName] = useState('');
   const [currentUrl, setCurrentUrl] = useState('');
   const [showResult, setShowResult] = useState(false);
   const [successCopy, setSuccessCopy] = useState(false);
@@ -17,8 +18,12 @@ function GenerateLink() {
     }
   }, []);
 
-
-  const URL = `${currentUrl}?to=${encodeURIComponent(name)}`;
+  const handleChangeLoc = (e) => {
+    const value = e.target.value;
+    setLoc(value);
+    console.log('Selected location:', value); // ✅ log immediately
+    setShowResult(false);
+  };
 
   const handleChange = (e) => {
     setType(parseInt(e.target.value, 10));
@@ -33,7 +38,7 @@ function GenerateLink() {
     try {
       await navigator.clipboard.writeText(text);
       setSuccessCopy(true);
-      showAlert && alert('Berhasil');
+      if (showAlert) alert('Berhasil');
     } catch (err) {
       setSuccessCopy(false);
       alert('Failed to copy! :(');
@@ -44,17 +49,18 @@ function GenerateLink() {
     if (type === PERSONAL) {
       return (
         <Fragment>
-          <div class="form-group">
-            <label for="exampleInputEmail1">Nama Tamu</label>
+          <div className="form-group">
+            <label htmlFor="guestName">Nama Tamu</label>
             <input
+              id="guestName"
               value={name}
               onChange={handleSetName}
               type="text"
-              class="form-control"
+              className="form-control"
               placeholder="Nama tamu.."
-            ></input>
+            />
           </div>
-          <button type="submit" class="btn btn-primary" onClick={() => setShowResult(true)}>
+          <button type="button" className="btn btn-primary" onClick={() => setShowResult(true)}>
             Generate Link
           </button>
         </Fragment>
@@ -63,15 +69,31 @@ function GenerateLink() {
   };
 
   const renderResult = () => {
+    const location =
+      loc === 'HPW'
+        ? 'Happy Wedding Hall'
+        : loc === 'Gereja'
+        ? 'Gereja Trinitas Cengkareng'
+        : 'Serdang Asri 2 Blok E 11 No. 21, Kec.Panongan, Kab.Tangerang';
+    const date = loc === 'Rumah' ? 'Minggu, 30 November 2025' : 'Sabtu, 29 November 2025';
+    let URL = `${currentUrl}?to=${encodeURIComponent(name)}`;
+
+    if (loc === 'Gereja') {
+      URL += `&type=holymatrimoni`;
+    } else if (loc === 'Rumah') {
+      URL += `&loc=home`;
+    }
+
     if (!showResult) return null;
 
     if (type === PERSONAL) {
-      const invitationText = `Dear ${name},\n\nDengan penuh sukacita, kami bermaksud mengundang Bapak/Ibu/Saudara/i untuk menghadiri acara pernikahan kami, Rizki dan Linda, yang akan dilaksanakan pada hari Sabtu, tanggal 29 November 2025.\n\nBerikut link undangan untuk informasi lebih lengkap:\n\n${URL}\n\nMerupakan suatu kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan untuk hadir dan memberikan doa restu.\nTerima kasih.`;
+      const invitationText = `Dear ${name},\n\nDengan penuh sukacita, kami bermaksud mengundang Bapak/Ibu/Saudara/i untuk menghadiri acara pernikahan kami, Rizki dan Linda, yang akan dilaksanakan pada hari ${date}.\n\nLokasi: ${location}\n\nBerikut link undangan untuk informasi lebih lengkap:\n\n${URL}\n\nMerupakan suatu kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan untuk hadir dan memberikan doa restu.\nTerima kasih.`;
 
       return (
         <div className="col-md-4 col-md-offset-4">
-          <div class="alert alert-success" role="alert" style={{ marginTop: '20px' }}>
-            <strong>Berhasil!</strong> <br />
+          <div className="alert alert-success" role="alert" style={{ marginTop: '20px' }}>
+            <strong>Berhasil!</strong>
+            <br />
             <p>
               {invitationText.split('\n').map((line, index) => (
                 <Fragment key={index}>
@@ -79,12 +101,14 @@ function GenerateLink() {
                   <br />
                 </Fragment>
               ))}
-            </p><br />
-
+            </p>
+            <br />
             <strong>Test Link : </strong>
             <a href={URL} target="_blank" rel="noreferrer" style={{ color: 'green', textDecoration: 'underline' }}>
               {URL}
-            </a> <br /><br />
+            </a>
+            <br />
+            <br />
             <button
               type="button"
               className="btn btn-default btn-xs"
@@ -107,12 +131,22 @@ function GenerateLink() {
       <Fragment>
         <div className="row">
           <div className="col-md-4 col-md-offset-4">
-            <div class="form-group">
-              <label for="exampleInputEmail1">Tipe Link</label>
-              <select class="form-control" value={type} onChange={handleChange}>
+            <div className="form-group">
+              <label htmlFor="linkType">Tipe Link</label>
+              <select id="linkType" className="form-control" value={type} onChange={handleChange}>
                 <option value={PERSONAL}>Individu</option>
               </select>
             </div>
+
+            <div className="form-group">
+              <label htmlFor="InputLokasi">Lokasi</label>
+              <select id="InputLokasi" className="form-control" value={loc} onChange={handleChangeLoc}>
+                <option value="HPW">Happy Wedding Hall</option>
+                <option value="Gereja">Gereja</option>
+                <option value="Rumah">Rumah</option>
+              </select>
+            </div>
+
             {renderContentType()}
           </div>
         </div>
