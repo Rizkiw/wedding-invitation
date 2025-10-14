@@ -21,7 +21,6 @@ function GenerateLink() {
   const handleChangeLoc = (e) => {
     const value = e.target.value;
     setLoc(value);
-    console.log('Selected location:', value); // ✅ log immediately
     setShowResult(false);
   };
 
@@ -84,10 +83,12 @@ function GenerateLink() {
       URL += `&loc=home`;
     }
 
+    const event = loc === 'Gereja' ? 'pemberkatan' : 'pernikahan';
+
     if (!showResult) return null;
 
     if (type === PERSONAL) {
-      const invitationText = `Dear ${name},\n\nDengan penuh sukacita, kami bermaksud mengundang Bapak/Ibu/Saudara/i untuk menghadiri acara pernikahan kami, Rizki dan Linda, yang akan dilaksanakan pada hari ${date}.\n\nLokasi: ${location}\n\nBerikut link undangan untuk informasi lebih lengkap:\n\n${URL}\n\nMerupakan suatu kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan untuk hadir dan memberikan doa restu.\nTerima kasih.`;
+      const invitationText = `Dear ${name},\n\nDengan penuh sukacita, kami bermaksud mengundang Bapak/Ibu/Saudara/i untuk menghadiri acara ${event} kami, Rizki dan Linda, yang akan dilaksanakan pada hari ${date}.\n\nLokasi: ${location}\n\nBerikut link undangan untuk informasi lebih lengkap:\n\n${URL}\n\nMerupakan suatu kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan untuk hadir dan memberikan doa restu.\nTerima kasih.`;
 
       return (
         <div className="col-md-4 col-md-offset-4">
