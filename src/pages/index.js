@@ -22,6 +22,7 @@ function Home({ location }) {
   const isInvitation = getQueryValue(location, 'type') === 'invitation';
   const isMatrimoni = getQueryValue(location, 'type') === 'holymatrimoni';
   const isHome = getQueryValue(location, 'loc') === 'home';
+  const isRek = getQueryValue(location, 'rek') === 'no';
   const isAnonymGuest = guestName === '' && !isInvitation;
   const codeLink = getQueryValue(location, 'code') || '';
   const finalTicketLink = `code=${codeLink}&name=${guestName}`;
@@ -31,6 +32,7 @@ function Home({ location }) {
   };
 
   const renderDetailContent = () => {
+    console.log(isRek);
     if (!showDetailContent) return null;
     return (
       <Fragment>
@@ -42,7 +44,7 @@ function Home({ location }) {
         <PhotoSection />
         <WishesSection />
         {/* <GreetingForm /> */}
-        <SendGift />
+        {!isRek && <SendGift />}
         <ThankYouSection />
         <FooterSection />
       </Fragment>

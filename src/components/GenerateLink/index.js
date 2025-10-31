@@ -6,6 +6,7 @@ const PERSONAL = 1;
 function GenerateLink() {
   const [type, setType] = useState(PERSONAL);
   const [loc, setLoc] = useState('HPW'); // ✅ default value
+  const [bank, setBank] = useState('Bank'); // ✅ default value
   const [name, setName] = useState('');
   const [currentUrl, setCurrentUrl] = useState('');
   const [showResult, setShowResult] = useState(false);
@@ -21,6 +22,12 @@ function GenerateLink() {
   const handleChangeLoc = (e) => {
     const value = e.target.value;
     setLoc(value);
+    setShowResult(false);
+  };
+
+  const handleChangeBank = (e) => {
+    const value = e.target.value;
+    setBank(value);
     setShowResult(false);
   };
 
@@ -81,6 +88,8 @@ function GenerateLink() {
       URL += `&type=holymatrimoni`;
     } else if (loc === 'Rumah') {
       URL += `&loc=home`;
+    } else if (bank === 'NonBank') {
+      URL += `&rek=no`;
     }
 
     const event = loc === 'Gereja' ? 'pemberkatan' : 'pernikahan';
@@ -145,6 +154,14 @@ function GenerateLink() {
                 <option value="HPW">Happy Wedding Hall</option>
                 <option value="Gereja">Gereja</option>
                 <option value="Rumah">Rumah</option>
+              </select>
+            </div>
+
+            <div className="form-group">
+              <label htmlFor="InputBank">Bank</label>
+              <select id="InputBank" className="form-control" value={bank} onChange={handleChangeBank}>
+                <option value="Bank">Tampilkan Rekening</option>
+                <option value="NonBank">Tanpa Rekening</option>
               </select>
             </div>
 
