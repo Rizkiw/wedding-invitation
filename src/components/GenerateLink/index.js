@@ -88,7 +88,8 @@ function GenerateLink() {
       URL += `&type=holymatrimoni`;
     } else if (loc === 'Rumah') {
       URL += `&loc=home`;
-    } else if (bank === 'NonBank') {
+    }
+    if (bank === 'NonBank') {
       URL += `&rek=no`;
     }
 
