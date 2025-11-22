@@ -18,7 +18,10 @@ import Gallery9 from '@assets/images/gallery/gallery-9.webp';
 import GalleryT9 from '@assets/images/gallery/gallery-t-9.jpg';
 import Gallery10 from '@assets/images/gallery/gallery-10.webp';
 import GalleryT10 from '@assets/images/gallery/gallery-t-10.jpg';
-
+import Gallery11 from '@assets/images/gallery/gallery-11.webp';
+import GalleryT11 from '@assets/images/gallery/gallery-t-11.jpg';
+import Gallery12 from '@assets/images/gallery/gallery-12.webp';
+import GalleryT12 from '@assets/images/gallery/gallery-t-12.jpg';
 
 const imagePairs = [
   { original: Gallery1, thumbnail: GalleryT1 },
@@ -31,6 +34,8 @@ const imagePairs = [
   { original: Gallery9, thumbnail: GalleryT9 },
   { original: Gallery5, thumbnail: GalleryT5 },
   { original: Gallery10, thumbnail: GalleryT10 },
+  { original: Gallery11, thumbnail: GalleryT11 },
+  { original: Gallery12, thumbnail: GalleryT12 },
 ];
 
 export const photos = imagePairs.map(({ original, thumbnail }) => ({ original, thumbnail }));
